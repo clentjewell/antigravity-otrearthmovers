@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Quote | OTR Earthmover — B2B Tyre Sourcing Enquiry</title>
+  <meta name="description" content="Request a quote for OTR earthmover tyres. B2B sourcing enquiry managed by Jewell Tyres — independent specialist since 1981.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+</head>
+<body class="bg-paper text-jewell-black font-sans leading-relaxed selection:bg-jewell-yellow">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-earth-rich sticky top-0 bg-paper/95 backdrop-blur-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" stroke="var(--color-black)" stroke-width="12" stroke-linecap="square"/>
+          <path d="M50 30L30 50H70L50 70" stroke="var(--color-black)" stroke-width="6"/>
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-sans font-black text-xl tracking-tight leading-none uppercase">OTR</span>
+          <span class="font-sans font-bold text-xs tracking-widest-eyebrow leading-none text-earth-rich uppercase mt-0.5">EARTHMOVER</span>
+        </div>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-8 font-sans font-bold text-sm uppercase tracking-wide-heavy">
+        <a href="index.html" class="text-earth-rich hover:text-jewell-black py-1">Home</a>
+        <a href="guide.html" class="text-earth-rich hover:text-jewell-black py-1">Tyre Guide</a>
+        <a href="calculators.html" class="text-earth-rich hover:text-jewell-black py-1">Calculators</a>
+        <a href="library.html" class="text-earth-rich hover:text-jewell-black py-1">Reference Library</a>
+        <a href="notes.html" class="text-earth-rich hover:text-jewell-black py-1">Market Notes</a>
+        <a href="contact.html" class="btn btn-black py-2 px-5 text-xs">Get Quote</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-nav" class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="font-sans font-black text-xl uppercase">OTR EARTHMOVER</span>
+      <button class="mobile-menu-btn" style="display:flex" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">✕</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="guide.html">Tyre Guide</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="library.html">Reference Library</a>
+    <a href="notes.html">Market Notes</a>
+    <a href="contact.html" class="btn btn-primary mt-4 text-center">Get Quote</a>
+  </div>
+
+  <!-- Page Header -->
+  <section class="py-12 bg-sand border-b border-earth-rich">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="font-sans font-medium text-eyebrow uppercase tracking-widest-eyebrow text-earth-rich">B2B SOURCING ENQUIRY</span>
+      <h1 class="font-sans font-black text-display-mobile md:text-5xl uppercase leading-none mt-2">REQUEST A TYRE QUOTE</h1>
+      <p class="text-base text-earth-rich mt-4 max-w-3xl leading-relaxed">
+        All OTR sourcing is managed directly by Jewell Tyres. Submit your requirements below and David's desk will respond within one business day.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info Panel -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="contact-layout">
+      <!-- LEFT: Quote Form -->
+      <form id="quote-form" onsubmit="event.preventDefault(); alert('Your sourcing request has been submitted. Jewell Tyres will respond within 1 business day.');">
+        <div class="space-y-6">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="full-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="full-name" name="full_name" required placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Your company or mine site">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="procurement@company.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+61 4XX XXX XXX">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="tyre-size">Tyre Size Required</label>
+              <input type="text" id="tyre-size" name="tyre_size" placeholder="27.00R49, 29.5-25, etc.">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="tra-code">TRA Code / Application</label>
+              <select id="tra-code" name="tra_code">
+                <option value="">Select application...</option>
+                <option value="E3">E3 Hauler</option>
+                <option value="E4">E4 Hauler Deep</option>
+                <option value="L3">L3 Loader</option>
+                <option value="L4">L4 Loader Deep</option>
+                <option value="L5">L5 Rock</option>
+                <option value="G2">G2 Grader</option>
+                <option value="G3">G3 Grader Deep</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="quantity">Quantity Required</label>
+              <input type="number" id="quantity" name="quantity" placeholder="e.g. 4" min="1">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="condition-pref">New / Used Preference</label>
+              <select id="condition-pref" name="condition_pref">
+                <option value="Either">Either — Best Available</option>
+                <option value="New">New Only</option>
+                <option value="Used">Used / Retread</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="details">Additional Details</label>
+            <textarea id="details" name="details" rows="4" placeholder="Specify machine model, site conditions, delivery location, or urgency requirements..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full text-center py-3">Submit Sourcing Request</button>
+        </div>
+      </form>
+
+      <!-- RIGHT: Info Panel -->
+      <div>
+        <div class="info-panel">
+          <h3>DIRECT DESK</h3>
+          <p style="margin-bottom: 1rem;">For commercial enquiries, Jewell Tyres manages all OTR sourcing directly.</p>
+          <ul>
+            <li>📞 <strong>+61 (0)2 6024 1910</strong></li>
+            <li>✉️ tyres@jewelltyres.com.au</li>
+            <li>✉️ support@otrearthmover.com.au</li>
+            <li>📍 10 Beard Crest, Wodonga VIC 3690</li>
+            <li>ABN: 67 007 090 923</li>
+          </ul>
+          <span class="powered-badge">POWERED BY JEWELL TYRES</span>
+        </div>
+
+        <!-- Response Time Notice -->
+        <div style="margin-top: 1.5rem; padding: 1.25rem; border: 1px solid var(--color-earth); border-radius: var(--radius); background: var(--color-sand);">
+          <span class="font-sans font-bold text-xs uppercase tracking-widest-eyebrow text-earth-rich">RESPONSE SLA</span>
+          <p class="text-sm text-earth-rich mt-2 leading-relaxed">
+            David's desk responds to all sourcing enquiries within <strong>1 business day</strong>. For urgent requirements (mine shutdown, safety stock), call the direct desk number above.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-jewell-black text-sand pt-12 pb-6 border-t border-earth-rich font-sans">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-earth-rich pb-10">
+      <div>
+        <h5 class="text-jewell-yellow font-black text-sm uppercase tracking-wide-heavy mb-4">OTR EARTHMOVER</h5>
+        <p class="text-sm text-sand leading-relaxed max-w-sm opacity-80">
+          The most useful B2B independent tyre guide reference in Australia. Sourced from databooks and closed civil knowledge bases.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">DIRECT DESK</h5>
+        <ul class="text-sm space-y-2 opacity-80">
+          <li>✉️ support@otrearthmover.com.au</li>
+          <li>📍 Powered by Jewell Tyres Australia.</li>
+          <li>ABN: 67 007 090 923</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">NEED A TYRE?</h5>
+        <p class="text-sm text-sand mb-4 opacity-80 leading-relaxed">
+          Sourcing, dispersal, and ultrasonic casing inspections are managed by our commercial partner.
+        </p>
+        <a href="contact.html" class="btn btn-primary py-2 px-5 text-xs">Connect With Jewell</a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-earth-rich">
+      <p>&copy; 2026 OTR Earthmover. All rights reserved. Powered by Jewell Tyres.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-jewell-yellow">Privacy Policy</a>
+        <span>&middot;</span>
+        <a href="#" class="hover:text-jewell-yellow">Trading Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Pre-fill form from URL query params (from Tyre Guide cards)
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      
+      const size = params.get('size');
+      const brand = params.get('brand');
+      const tra = params.get('tra');
+      const condition = params.get('condition');
+      const source = params.get('source');
+
+      if (size) {
+        document.getElementById('tyre-size').value = decodeURIComponent(size);
+      }
+      if (tra) {
+        const traSelect = document.getElementById('tra-code');
+        const traVal = decodeURIComponent(tra);
+        for (let opt of traSelect.options) {
+          if (opt.value === traVal) { traSelect.value = traVal; break; }
+        }
+      }
+      if (condition) {
+        const condSelect = document.getElementById('condition-pref');
+        const condVal = decodeURIComponent(condition);
+        if (condVal === 'Secondhand' || condVal === 'Surplus') condSelect.value = 'Used';
+        else if (condVal === 'New') condSelect.value = 'New';
+      }
+
+      // Build context string for details textarea
+      const contextParts = [];
+      if (brand) contextParts.push(`Brand: ${decodeURIComponent(brand)}`);
+      if (size) contextParts.push(`Size: ${decodeURIComponent(size)}`);
+      if (tra) contextParts.push(`TRA: ${decodeURIComponent(tra)}`);
+      if (condition) contextParts.push(`Condition: ${decodeURIComponent(condition)}`);
+      if (source) contextParts.push(`Enquiry source: ${decodeURIComponent(source)}`);
+      
+      if (contextParts.length > 0) {
+        const details = document.getElementById('details');
+        details.value = `[Pre-filled from OTR Tyre Guide]\n${contextParts.join(' | ')}\n\nAdditional requirements: `;
+      }
+    });
+
+    // Mobile nav close on background click
+    document.getElementById('mobile-nav').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>

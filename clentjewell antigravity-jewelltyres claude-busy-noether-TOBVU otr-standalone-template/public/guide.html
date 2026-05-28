@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTR Tyre Guide Directory | Independent Sourcing Index | otrearthmover.com</title>
+  <meta name="description" content="Search our independent directory of OTR earthmover tyre specifications. Filter by TRA code, rim size, application, or manufacturer to find alternates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+</head>
+<body class="bg-paper text-jewell-black font-sans leading-relaxed selection:bg-jewell-yellow">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-earth-rich sticky top-0 bg-paper/95 backdrop-blur-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" stroke="var(--color-black)" stroke-width="12" stroke-linecap="square"/>
+          <path d="M50 30L30 50H70L50 70" stroke="var(--color-black)" stroke-width="6"/>
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-sans font-black text-xl tracking-tight leading-none uppercase">OTR</span>
+          <span class="font-sans font-bold text-xs tracking-widest-eyebrow leading-none text-earth-rich uppercase mt-0.5">EARTHMOVER</span>
+        </div>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-8 font-sans font-bold text-sm uppercase tracking-wide-heavy">
+        <a href="index.html" class="text-earth-rich hover:text-jewell-black py-1">Home</a>
+        <a href="guide.html" class="text-jewell-black border-b-2 border-jewell-yellow py-1">Tyre Guide</a>
+        <a href="calculators.html" class="text-earth-rich hover:text-jewell-black py-1">Calculators</a>
+        <a href="library.html" class="text-earth-rich hover:text-jewell-black py-1">Reference Library</a>
+        <a href="notes.html" class="text-earth-rich hover:text-jewell-black py-1">Market Notes</a>
+        <a href="contact.html" class="btn btn-black py-2 px-5 text-xs">Get Quote</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-nav" class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="font-sans font-black text-xl uppercase">OTR EARTHMOVER</span>
+      <button class="mobile-menu-btn" style="display:flex" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">✕</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="guide.html" class="active-mobile">Tyre Guide</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="library.html">Reference Library</a>
+    <a href="notes.html">Market Notes</a>
+    <a href="contact.html" class="btn btn-primary mt-4 text-center">Get Quote</a>
+  </div>
+
+  <!-- Title section -->
+  <section class="py-12 bg-sand border-b border-earth-rich">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="font-sans font-medium text-eyebrow uppercase tracking-widest-eyebrow text-earth-rich">TECHNICAL INDEX</span>
+      <h1 class="font-sans font-black text-display-mobile md:text-5xl uppercase leading-none mt-2">OTR TYRE DIRECTORY</h1>
+    </div>
+  </section>
+
+  <!-- Faceted Search Console -->
+  <section class="py-12 px-6 max-w-7xl mx-auto">
+    <div class="tyre-console">
+      <div class="space-y-4">
+        <!-- Search bar -->
+        <div>
+          <input type="text" id="search-input" placeholder="Search by size (e.g. 40.00R57), TRA code (e.g. E4), brand, or keywords..." class="w-full" oninput="applyFilters()" />
+        </div>
+        
+        <!-- Filter selections -->
+        <div class="tyre-filters-row">
+          <div>
+            <label class="block text-xs font-bold uppercase mb-1 text-earth-rich" for="brand-filter">Brand</label>
+            <select id="brand-filter" onchange="applyFilters()">
+              <option value="all">All Manufacturers</option>
+              <option value="Bridgestone">Bridgestone</option>
+              <option value="Michelin">Michelin</option>
+              <option value="Goodyear">Goodyear</option>
+              <option value="Yokohama">Yokohama</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase mb-1 text-earth-rich" for="tra-filter">TRA Code</label>
+            <select id="tra-filter" onchange="applyFilters()">
+              <option value="all">All TRA Classifications</option>
+              <option value="E3">E3 Rock Radial</option>
+              <option value="E4">E4 Rock Deep</option>
+              <option value="G2">G2 Grader Traction</option>
+              <option value="L3">L3 Loader Rock</option>
+              <option value="L4">L4 Loader Deep</option>
+              <option value="L5">L5 Loader Ultra Deep</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase mb-1 text-earth-rich" for="rim-filter">Rim Size</label>
+            <select id="rim-filter" onchange="applyFilters()">
+              <option value="all">All Sizes (24" - 63")</option>
+              <option value="medium">24" - 35" Rim</option>
+              <option value="large">39" - 49" Rim</option>
+              <option value="giant">51" - 63" Giant OTR</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase mb-1 text-earth-rich" for="condition-filter">Condition</label>
+            <select id="condition-filter" onchange="applyFilters()">
+              <option value="all">All Conditions</option>
+              <option value="New">Brand New</option>
+              <option value="Secondhand">Secondhand / Tested</option>
+              <option value="Surplus">Liquidated Surplus</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active count and search directory result grid -->
+    <div class="flex justify-between items-center mb-6">
+      <span class="font-sans font-bold text-sm uppercase tracking-wide-heavy text-earth-rich" id="results-count">Showing 8 premium tyres</span>
+      <button class="btn btn-outline py-1 px-4 text-xs font-sans" id="clear-filters-btn" onclick="clearFilters()" style="display: none;">Clear Filters</button>
+    </div>
+
+    <!-- Guide Table / Cards Grid -->
+    <div class="tyre-grid" id="tyre-grid">
+      <!-- Dynamically Injected by JS -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-jewell-black text-sand pt-12 pb-6 border-t border-earth-rich font-sans">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-earth-rich pb-10">
+      <div>
+        <h5 class="text-jewell-yellow font-black text-sm uppercase tracking-wide-heavy mb-4">OTR EARTHMOVER</h5>
+        <p class="text-sm text-sand leading-relaxed max-w-sm opacity-80">
+          The most useful B2B independent tyre guide reference in Australia. Sourced from databooks and closed civil knowledge bases.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">DIRECT DESK</h5>
+        <ul class="text-sm space-y-2 opacity-80">
+          <li>✉️ support@otrearthmover.com.au</li>
+          <li>📍 Powered by Jewell Tyres Australia.</li>
+          <li>ABN: 67 007 090 923</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">NEED A TYRE?</h5>
+        <p class="text-sm text-sand mb-4 opacity-80 leading-relaxed">
+          Sourcing, dispersal, and ultrasonic casing inspections are managed by our commercial partner.
+        </p>
+        <a href="contact.html" class="btn btn-primary py-2 px-5 text-xs">Connect With Jewell</a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-earth-rich">
+      <p>&copy; 2026 OTR Earthmover. All rights reserved. Powered by Jewell Tyres.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-jewell-yellow">Privacy Policy</a>
+        <span>&middot;</span>
+        <a href="#" class="hover:text-jewell-yellow">Trading Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for list query filters -->
+  <script>
+    // Mock Database corresponding strictly to packages/data
+    const TYRE_DB = [
+      { id: "JT-TYRE-001", brand: "Bridgestone", model: "VUT Radial", size: "14.00R24", rim: 24, rimClass: "medium", condition: "Secondhand", traCode: "G2", application: "civil", appText: "Grader / Utility Operations", plyRating: "16 Ply Equiv", starRating: "★", treadDepth: "75% Remaining", compound: "G2 Traction", qty: 12 },
+      { id: "JT-TYRE-002", brand: "Michelin", model: "XTLA", size: "23.5R25", rim: 25, rimClass: "medium", condition: "Secondhand", traCode: "L3", application: "civil", appText: "Earthmoving Loader", plyRating: "20 Ply Equiv", starRating: "★★", treadDepth: "80% Remaining", compound: "L3 Cut-Resistant", qty: 4 },
+      { id: "JT-TYRE-003", brand: "Goodyear", model: "GP-4D", size: "26.5R25", rim: 25, rimClass: "medium", condition: "Surplus", traCode: "L4", application: "civil", appText: "Civil Loader / Dozer", plyRating: "24 Ply Equiv", starRating: "★★", treadDepth: "95% OEM Surplus", compound: "L4 Rock-Traction", qty: 8 },
+      { id: "JT-TYRE-004", brand: "Yokohama", model: "Y67", size: "18.00R33", rim: 33, rimClass: "medium", condition: "New", traCode: "E4", application: "underground", appText: "Underground Articulated", plyRating: "32 Ply Equiv", starRating: "★★★", treadDepth: "100% Brand New", compound: "E4 Cut-Protected", qty: 6 },
+      { id: "JT-TYRE-005", brand: "Goodyear", model: "RT-4D", size: "29.5R35", rim: 35, rimClass: "medium", condition: "Surplus", traCode: "L5", application: "civil", appText: "Heavy Civil Scrapers", plyRating: "36 Ply Equiv", starRating: "★★", treadDepth: "90% Casing Inspected", compound: "L5 Deep Tread", qty: 4 },
+      { id: "JT-TYRE-006", brand: "Yokohama", model: "RL52", size: "45/65R49", rim: 49, rimClass: "large", condition: "Secondhand", traCode: "L5", application: "mining", appText: "Open-Cut Wheel Loader", plyRating: "50 Ply Equiv", starRating: "★★★", treadDepth: "82% Certified Depth", compound: "L5 Cut-Protection", qty: 2 },
+      { id: "JT-TYRE-007", brand: "Bridgestone", model: "VRDP Radial", size: "40.00R57", rim: 57, rimClass: "giant", condition: "New", traCode: "E4", application: "mining", appText: "Giant Mining Dump Truck", plyRating: "60 Ply Equiv", starRating: "★★", treadDepth: "100% Brand New", compound: "E4 Heavy Duty", qty: 4 },
+      { id: "JT-TYRE-008", brand: "Michelin", model: "XDR 3", size: "59/80R63", rim: 63, rimClass: "giant", condition: "Secondhand", traCode: "E4", application: "mining", appText: "Ultra-Class Dump Truck", plyRating: "68 Ply Equiv", starRating: "★★", treadDepth: "85% Ultrasonic Certified", compound: "E4 Long-Wear", qty: 2 }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Check query string filter parameters from other pages
+      const params = new URLSearchParams(window.location.search);
+      const codeFilter = params.get("filter");
+      if (codeFilter) {
+        document.getElementById("tra-filter").value = codeFilter;
+      }
+      applyFilters();
+    });
+
+    function applyFilters() {
+      const search = document.getElementById("search-input").value.toLowerCase();
+      const brand = document.getElementById("brand-filter").value;
+      const tra = document.getElementById("tra-filter").value;
+      const rim = document.getElementById("rim-filter").value;
+      const condition = document.getElementById("condition-filter").value;
+
+      const filtered = TYRE_DB.filter(item => {
+        const matchesSearch = item.size.toLowerCase().includes(search) || 
+                              item.brand.toLowerCase().includes(search) || 
+                              item.model.toLowerCase().includes(search) ||
+                              item.traCode.toLowerCase().includes(search);
+                              
+        const matchesBrand = brand === 'all' || item.brand === brand;
+        const matchesTra = tra === 'all' || item.traCode === tra;
+        const matchesRim = rim === 'all' || item.rimClass === rim;
+        const matchesCondition = condition === 'all' || item.condition === condition;
+
+        return matchesSearch && matchesBrand && matchesTra && matchesRim && matchesCondition;
+      });
+
+      // Toggle Clear Filters Button
+      const isFiltered = search !== '' || brand !== 'all' || tra !== 'all' || rim !== 'all' || condition !== 'all';
+      document.getElementById("clear-filters-btn").style.display = isFiltered ? "block" : "none";
+
+      // Update count label
+      document.getElementById("results-count").innerText = `Showing ${filtered.length} premium tyre${filtered.length === 1 ? '' : 's'}`;
+
+      // Inject Cards
+      const grid = document.getElementById("tyre-grid");
+      grid.innerHTML = "";
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full border border-earth-rich p-12 text-center rounded-sm bg-sand">
+            <span class="text-3xl">🔍</span>
+            <h4 class="font-sans font-black text-xl uppercase mt-2 mb-1">No Direct Matches Found</h4>
+            <p class="text-sm text-earth-rich">
+              OTA database updates are volatile. Contact us with your exact rim compound constraints.
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "tyre-card";
+        card.innerHTML = `
+          <div class="tyre-card-header">
+            <div class="flex flex-col">
+              <span class="font-sans font-black text-lg text-jewell-black">${item.size}</span>
+              <span class="text-xs font-bold text-earth-rich uppercase mt-0.5">${item.brand} ${item.model}</span>
+            </div>
+            <span class="tra-badge">${item.traCode}</span>
+          </div>
+          
+          <div class="tyre-specs-grid">
+            <div class="tyre-spec-item">
+              <span class="tyre-spec-label">Machine Type</span>
+              <span class="tyre-spec-val text-xs">${item.appText}</span>
+            </div>
+            <div class="tyre-spec-item">
+              <span class="tyre-spec-label">Casing Star</span>
+              <span class="tyre-spec-val">${item.starRating}</span>
+            </div>
+            <div class="tyre-spec-item">
+              <span class="tyre-spec-label">Casing Rating</span>
+              <span class="tyre-spec-val">${item.plyRating}</span>
+            </div>
+            <div class="tyre-spec-item">
+              <span class="tyre-spec-label">Compound</span>
+              <span class="tyre-spec-val text-xs">${item.compound}</span>
+            </div>
+            <div class="tyre-spec-item">
+              <span class="tyre-spec-label">Tread State</span>
+              <span class="tyre-spec-val">${item.treadDepth}</span>
+            </div>
+            <div class="tyre-spec-item">
+              <span class="tyre-spec-label">Stock Qty</span>
+              <span class="tyre-spec-val">${item.qty} tyres</span>
+            </div>
+          </div>
+
+          <div class="tyre-card-actions">
+            <!-- Prefilled quote link routing to Site 2's contact page -->
+            <a href="contact.html?size=${encodeURIComponent(item.size)}&brand=${encodeURIComponent(item.brand)}&tra=${encodeURIComponent(item.traCode)}&condition=${encodeURIComponent(item.condition)}" class="btn btn-black btn-full-width py-2 text-xs">
+              Enquire Availability
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function clearFilters() {
+      document.getElementById("search-input").value = "";
+      document.getElementById("brand-filter").value = "all";
+      document.getElementById("tra-filter").value = "all";
+      document.getElementById("rim-filter").value = "all";
+      document.getElementById("condition-filter").value = "all";
+      applyFilters();
+    }
+  </script>
+
+  <script>
+    document.getElementById('mobile-nav').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>

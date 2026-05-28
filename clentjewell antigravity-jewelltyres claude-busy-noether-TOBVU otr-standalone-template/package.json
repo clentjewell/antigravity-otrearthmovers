@@ -1,0 +1,8 @@
+{
+  "name": "otr-earthmover",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rm -rf public && mkdir -p public && cp index.html guide.html calculators.html library.html notes.html contact.html style.css public/"
+  }
+}

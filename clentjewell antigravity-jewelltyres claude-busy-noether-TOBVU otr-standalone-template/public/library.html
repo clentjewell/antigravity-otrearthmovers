@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference Library | OTR Tyre Glossary & TRA Codes | otrearthmover.com</title>
+  <meta name="description" content="Access our OTR reference library. Comprehensive index of Tire and Rim Association (TRA) codes, OTR glossary terms, and dual assembly mixing regulations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+</head>
+<body class="bg-paper text-jewell-black font-sans leading-relaxed selection:bg-jewell-yellow">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-earth-rich sticky top-0 bg-paper/95 backdrop-blur-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" stroke="var(--color-black)" stroke-width="12" stroke-linecap="square"/>
+          <path d="M50 30L30 50H70L50 70" stroke="var(--color-black)" stroke-width="6"/>
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-sans font-black text-xl tracking-tight leading-none uppercase">OTR</span>
+          <span class="font-sans font-bold text-xs tracking-widest-eyebrow leading-none text-earth-rich uppercase mt-0.5">EARTHMOVER</span>
+        </div>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-8 font-sans font-bold text-sm uppercase tracking-wide-heavy">
+        <a href="index.html" class="text-earth-rich hover:text-jewell-black py-1">Home</a>
+        <a href="guide.html" class="text-earth-rich hover:text-jewell-black py-1">Tyre Guide</a>
+        <a href="calculators.html" class="text-earth-rich hover:text-jewell-black py-1">Calculators</a>
+        <a href="library.html" class="text-jewell-black border-b-2 border-jewell-yellow py-1">Reference Library</a>
+        <a href="notes.html" class="text-earth-rich hover:text-jewell-black py-1">Market Notes</a>
+        <a href="contact.html" class="btn btn-black py-2 px-5 text-xs">Get Quote</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-nav" class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="font-sans font-black text-xl uppercase">OTR EARTHMOVER</span>
+      <button class="mobile-menu-btn" style="display:flex" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">✕</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="guide.html">Tyre Guide</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="library.html" class="active-mobile">Reference Library</a>
+    <a href="notes.html">Market Notes</a>
+    <a href="contact.html" class="btn btn-primary mt-4 text-center">Get Quote</a>
+  </div>
+
+  <!-- Title section -->
+  <section class="py-12 bg-sand border-b border-earth-rich">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="font-sans font-medium text-eyebrow uppercase tracking-widest-eyebrow text-earth-rich">KNOWLEDGE BASE</span>
+      <h1 class="font-sans font-black text-display-mobile md:text-5xl uppercase leading-none mt-2">OTR REFERENCE LIBRARY</h1>
+    </div>
+  </section>
+
+  <!-- Reference Split Guide -->
+  <section class="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <!-- Sidebar Navigation -->
+    <div class="reference-nav self-start">
+      <button class="reference-nav-item active" id="nav-tra" onclick="showSection('tra')">TRA Codes Guide</button>
+      <button class="reference-nav-item" id="nav-glossary" onclick="showSection('glossary')">OTR Glossary</button>
+      <button class="reference-nav-item" id="nav-mixing" onclick="showSection('mixing')">Dual Axle Mixing Rules</button>
+      <button class="reference-nav-item" id="nav-construction" onclick="showSection('construction')">Radial vs Bias Plies</button>
+    </div>
+
+    <!-- Content panels -->
+    <div class="md:col-span-3">
+      
+      <!-- 1. TRA CODES SECTION -->
+      <div id="sec-tra" class="space-y-6 ref-section-group">
+        <h3 class="font-sans font-black text-2xl uppercase tracking-tight">Tire and Rim Association (TRA) Classifications</h3>
+        <p class="text-base text-earth-rich leading-relaxed">
+          TRA Codes are standard international codes defining OTR tyres. The prefix letter indicates vehicle category (<strong>E</strong> = Earthmover/Hauler, <strong>L</strong> = Loader/Dozer, <strong>G</strong> = Grader, <strong>C</strong> = Compactor). The trailing number specifies tread depth ratios relative to a standard casing:
+        </p>
+
+        <div class="guide-table-container">
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>TRA Code</th>
+                <th>Tread Type</th>
+                <th>Tread Depth Ratio</th>
+                <th>Typical Application</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tra-badge">E2</span></td>
+                <td>Traction Radial</td>
+                <td>Regular (100%)</td>
+                <td>Dump trucks, scrapers on soft dirt terrains.</td>
+              </tr>
+              <tr>
+                <td><span class="tra-badge">E3</span></td>
+                <td>Rock Radial</td>
+                <td>Regular (100%)</td>
+                <td>General haul roads, open-cut mining hauler.</td>
+              </tr>
+              <tr>
+                <td><span class="tra-badge">E4</span></td>
+                <td>Rock Deep</td>
+                <td>150% Deep Tread</td>
+                <td>Heavy haulage standard. Denser protection under loads.</td>
+              </tr>
+              <tr>
+                <td><span class="tra-badge">G2</span></td>
+                <td>Traction</td>
+                <td>Regular (100%)</td>
+                <td>Directional traction grading operations.</td>
+              </tr>
+              <tr>
+                <td><span class="tra-badge">L3</span></td>
+                <td>Rock Loader</td>
+                <td>Regular (100%)</td>
+                <td>Balanced loading and carry speeds. Cut resistant.</td>
+              </tr>
+              <tr>
+                <td><span class="tra-badge">L4</span></td>
+                <td>Rock Deep Loader</td>
+                <td>150% Deep Tread</td>
+                <td> Loader dozer rock loading in abrasive pit yards.</td>
+              </tr>
+              <tr>
+                <td><span class="tra-badge">L5</span></td>
+                <td>Rock Ultra Deep</td>
+                <td>250% Deep Tread</td>
+                <td>Severe, jagged rock yards. Maximum cut defense.</td>
+              </tr>
+              <tr>
+                <td><span class="tra-badge">L5S</span></td>
+                <td>Smooth Ultra Deep</td>
+                <td>250% Smooth block</td>
+                <td>Underground mining LHD. Zero grooves to prevent shard entry.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 2. GLOSSARY SECTION -->
+      <div id="sec-glossary" class="space-y-6 ref-section-group" style="display: none;">
+        <h3 class="font-sans font-black text-2xl uppercase tracking-tight mb-4">Technical OTR Glossary</h3>
+        
+        <div class="glossary-grid">
+          <!-- Item 1 -->
+          <div class="glossary-card bg-sand border border-earth-rich">
+            <h4 class="glossary-term">TKPH (Ton-Kilometer-Per-Hour)</h4>
+            <p class="text-sm text-earth-rich leading-relaxed">
+              Thermal safety index carrying-capacity rating representing internal heat limits. Operating a haul truck above tyre's TKPH will result in rubber casing delamination and blowout.
+            </p>
+          </div>
+          <!-- Item 2 -->
+          <div class="glossary-card bg-sand border border-earth-rich">
+            <h4 class="glossary-term">Work Cycle Factor (WCF)</h4>
+            <p class="text-sm text-earth-rich leading-relaxed">
+               Loader/Dozer thermal index representing speed-load stress during loading or load-and-carry operations.
+            </p>
+          </div>
+          <!-- Item 3 -->
+          <div class="glossary-card bg-sand border border-earth-rich">
+            <h4 class="glossary-term">Star Rating (★)</h4>
+            <p class="text-sm text-earth-rich leading-relaxed">
+              Standard index rating representing radial steel casing strength. Star ratings (★, ★★, ★★★) correspond to traditional Bias ply equivalence indices.
+            </p>
+          </div>
+          <!-- Item 4 -->
+          <div class="glossary-card bg-sand border border-earth-rich">
+            <h4 class="glossary-term">Bias Ply Casing</h4>
+            <p class="text-sm text-earth-rich leading-relaxed">
+              Traditional multi-ply cross diagonal cords construction. Extremely stiff sidewalls ideal for side sway loader cycles, but generates high heat at speed.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. MIXING RULES SECTION -->
+      <div id="sec-mixing" class="space-y-6 ref-section-group" style="display: none;">
+        <h3 class="font-sans font-black text-2xl uppercase tracking-tight">Dual Axle Tyre Mixing Regulations</h3>
+        <p class="text-base text-earth-rich leading-relaxed">
+          Placing tyres with mismatched diameters or ratings on the same dual assembly axle is dangerous. The larger tyre will carry the majority of the weight load, causing rapid heat buildup and premature casing blowouts.
+        </p>
+
+        <div class="my-6 bg-sand border border-earth-rich p-6 rounded-sm space-y-4">
+          <h5 class="font-sans font-extrabold text-sm uppercase tracking-wide-heavy text-earth-rich">Axle Placement Standards:</h5>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-jewell-yellow">▪</span>
+              <span><strong>Diameter Match:</strong> Never exceed 1% total diameter difference between dual-mounted tyres.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-jewell-yellow">▪</span>
+              <span><strong>Tread Pattern Match:</strong> Always dual-mount identical TRA codes on the same axle (e.g. do not mix E3 and E4).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-jewell-yellow">▪</span>
+              <span><strong>Casing Type Match:</strong> Radial and Bias tyres must **never** be mixed on the same axle.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. CONSTRUCTION SECTION -->
+      <div id="sec-construction" class="space-y-6 ref-section-group" style="display: none;">
+        <h3 class="font-sans font-black text-2xl uppercase tracking-tight">Tyre Construction: Radial vs Bias</h3>
+        <p class="text-base text-earth-rich leading-relaxed">
+          The mechanical carcass construction dictates OTR performance bounds:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-6">
+          <div class="bg-sand border border-earth-rich p-6 rounded-sm">
+            <h4 class="font-sans font-black text-lg uppercase mb-2">Radial steel plies</h4>
+            <p class="text-sm text-earth-rich leading-relaxed">
+              Casing steel cables run at 90-degrees relative to rotation. Offers low rolling resistance, flexible sidewall tread contact, low thermal heat buildup at high speeds, and optimal B2B fuel savings.
+            </p>
+          </div>
+          <div class="bg-sand border border-earth-rich p-6 rounded-sm">
+            <h4 class="font-sans font-black text-lg uppercase mb-2">Bias diagonal plies</h4>
+            <p class="text-sm text-earth-rich leading-relaxed">
+              Cross diagonal nylon layers. Provides rigid sidewalls to resist lateral forces and side-sway load stresses during digging cycles. Highly abrasive cut defense but suffers rapid heat vulcanization.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-jewell-black text-sand pt-12 pb-6 border-t border-earth-rich font-sans">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-earth-rich pb-10">
+      <div>
+        <h5 class="text-jewell-yellow font-black text-sm uppercase tracking-wide-heavy mb-4">OTR EARTHMOVER</h5>
+        <p class="text-sm text-sand leading-relaxed max-w-sm opacity-80">
+          The most useful B2B independent tyre guide reference in Australia. Sourced from databooks and closed civil knowledge bases.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">DIRECT DESK</h5>
+        <ul class="text-sm space-y-2 opacity-80">
+          <li>✉️ support@otrearthmover.com.au</li>
+          <li>📍 Powered by Jewell Tyres Australia.</li>
+          <li>ABN: 67 007 090 923</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">NEED A TYRE?</h5>
+        <p class="text-sm text-sand mb-4 opacity-80 leading-relaxed">
+          Sourcing, dispersal, and ultrasonic casing inspections are managed by our commercial partner.
+        </p>
+        <a href="contact.html" class="btn btn-primary py-2 px-5 text-xs">Connect With Jewell</a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-earth-rich">
+      <p>&copy; 2026 OTR Earthmover. All rights reserved. Powered by Jewell Tyres.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-jewell-yellow">Privacy Policy</a>
+        <span>&middot;</span>
+        <a href="#" class="hover:text-jewell-yellow">Trading Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for section switcher tabs -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Check query string parameters to select initial library tab
+      const params = new URLSearchParams(window.location.search);
+      const activeSec = params.get("sec");
+      if (activeSec) {
+        showSection(activeSec);
+      }
+    });
+
+    function showSection(secType) {
+      // Hide all panels
+      document.querySelectorAll(".ref-section-group").forEach(panel => {
+        panel.style.display = "none";
+      });
+
+      // Show requested panel
+      document.getElementById("sec-" + secType).style.display = "block";
+
+      // Toggle active sidebar button classes
+      document.querySelectorAll(".reference-nav-item").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      document.getElementById("nav-" + secType).classList.add("active");
+    }
+  </script>
+
+  <script>
+    document.getElementById('mobile-nav').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>

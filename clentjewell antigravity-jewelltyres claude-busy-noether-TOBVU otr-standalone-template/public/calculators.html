@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTR Calculators | TKPH Heat capacity & Loader WCF | otrearthmover.com</title>
+  <meta name="description" content="Calculate Ton-Kilometer-Per-Hour (TKPH) heat limits, loader Work Cycle Factor (WCF), fitment width suggestions, and star-to-ply casing conversions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+</head>
+<body class="bg-paper text-jewell-black font-sans leading-relaxed selection:bg-jewell-yellow">
+
+  <!-- Header Navigation -->
+  <header class="border-b border-earth-rich sticky top-0 bg-paper/95 backdrop-blur-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" stroke="var(--color-black)" stroke-width="12" stroke-linecap="square"/>
+          <path d="M50 30L30 50H70L50 70" stroke="var(--color-black)" stroke-width="6"/>
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-sans font-black text-xl tracking-tight leading-none uppercase">OTR</span>
+          <span class="font-sans font-bold text-xs tracking-widest-eyebrow leading-none text-earth-rich uppercase mt-0.5">EARTHMOVER</span>
+        </div>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-8 font-sans font-bold text-sm uppercase tracking-wide-heavy">
+        <a href="index.html" class="text-earth-rich hover:text-jewell-black py-1">Home</a>
+        <a href="guide.html" class="text-earth-rich hover:text-jewell-black py-1">Tyre Guide</a>
+        <a href="calculators.html" class="text-jewell-black border-b-2 border-jewell-yellow py-1">Calculators</a>
+        <a href="library.html" class="text-earth-rich hover:text-jewell-black py-1">Reference Library</a>
+        <a href="notes.html" class="text-earth-rich hover:text-jewell-black py-1">Market Notes</a>
+        <a href="contact.html" class="btn btn-black py-2 px-5 text-xs">Get Quote</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mobile-nav').classList.add('open')" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-nav" class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="font-sans font-black text-xl uppercase">OTR EARTHMOVER</span>
+      <button class="mobile-menu-btn" style="display:flex" onclick="document.getElementById('mobile-nav').classList.remove('open')" aria-label="Close menu">✕</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="guide.html">Tyre Guide</a>
+    <a href="calculators.html" class="active-mobile">Calculators</a>
+    <a href="library.html">Reference Library</a>
+    <a href="notes.html">Market Notes</a>
+    <a href="contact.html" class="btn btn-primary mt-4 text-center">Get Quote</a>
+  </div>
+
+  <!-- Title section -->
+  <section class="py-12 bg-sand border-b border-earth-rich">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="font-sans font-medium text-eyebrow uppercase tracking-widest-eyebrow text-earth-rich">TECHNICAL UTILITIES</span>
+      <h1 class="font-sans font-black text-display-mobile md:text-5xl uppercase leading-none mt-2">LIVE B2B OTR CALCULATORS</h1>
+    </div>
+  </section>
+
+  <!-- Split Selector and Panel view -->
+  <section class="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <!-- Sidebar Selector -->
+    <div class="flex flex-col border border-earth-rich rounded-sm overflow-hidden bg-sand self-start">
+      <button class="text-left font-sans font-bold text-sm uppercase tracking-wide-heavy p-4 border-b border-earth-rich active-tab-btn active" id="btn-tkph" onclick="showCalculator('tkph')">01. TKPH Heat Capacity</button>
+      <button class="text-left font-sans font-bold text-sm uppercase tracking-wide-heavy p-4 border-b border-earth-rich active-tab-btn" id="btn-wcf" onclick="showCalculator('wcf')">02. Loader WCF Factor</button>
+      <button class="text-left font-sans font-bold text-sm uppercase tracking-wide-heavy p-4 border-b border-earth-rich active-tab-btn" id="btn-rim" onclick="showCalculator('rim')">03. Width to Rim Matcher</button>
+      <button class="text-left font-sans font-bold text-sm uppercase tracking-wide-heavy p-4 active-tab-btn" id="btn-star" onclick="showCalculator('star')">04. Star to Ply Converter</button>
+    </div>
+
+    <!-- Active Calculator Panel (Spans 3 cols) -->
+    <div class="md:col-span-3">
+      
+      <!-- 1. TKPH CALCULATOR PANEL -->
+      <div id="panel-tkph" class="space-y-8 calc-panel-group">
+        <div class="calc-layout-grid">
+          <!-- Input -->
+          <div class="calc-panel">
+            <h3 class="font-sans font-black text-2xl uppercase mb-1">TKPH HEAT CAPACITY</h3>
+            <p class="text-xs font-bold text-earth-rich uppercase tracking-wide-heavy mb-6 border-b border-earth-rich pb-2">HAUL TRUCK THERMAL RISK LIMITS</p>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="tkph-empty">Empty Tyre Load (tonnes) *</label>
+                <input type="number" id="tkph-empty" value="12" step="0.5" class="w-full" oninput="runTKPH()" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="tkph-loaded">Loaded Tyre Load (tonnes) *</label>
+                <input type="number" id="tkph-loaded" value="28" step="0.5" class="w-full" oninput="runTKPH()" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="tkph-distance">Round Trip Distance (km) *</label>
+                <input type="number" id="tkph-distance" value="8" step="0.1" class="w-full" oninput="runTKPH()" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="tkph-trips">Number of Trips per Shift *</label>
+                <input type="number" id="tkph-trips" value="18" step="1" class="w-full" oninput="runTKPH()" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="tkph-hours">Shift Duration (hours) *</label>
+                <input type="number" id="tkph-hours" value="12" step="0.5" class="w-full" oninput="runTKPH()" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Output -->
+          <div class="calc-results-panel">
+            <span class="text-xs uppercase font-extrabold tracking-wide-heavy text-earth-rich block">OPERATING RATING</span>
+            <div class="total-saved-container mb-4">
+              <span class="saved-amount" id="res-tkph">160.0</span>
+              <span class="saved-symbol text-xs font-bold ml-1 uppercase">TKPH</span>
+            </div>
+
+            <div class="space-y-4 font-sans text-sm border-t border-earth-rich pt-4">
+              <div class="flex justify-between">
+                <span class="text-earth-rich">Mean Tyre Load:</span>
+                <span class="font-bold" id="res-tkph-mean-load">20.0 t</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-earth-rich">Mean Shift Speed:</span>
+                <span class="font-bold" id="res-tkph-mean-speed">12.0 km/h</span>
+              </div>
+            </div>
+
+            <!-- Visual Threshold Safety Indicator -->
+            <div class="safety-meter-container" id="tkph-meter-box">
+              <span class="text-xs font-bold uppercase text-jewell-black tracking-wide-heavy block" id="res-tkph-status">WARNING</span>
+              <!-- Visual indicator segment -->
+              <div class="safety-meter-bar">
+                <div class="meter-segment bg-emerald-500" style="width: 40%; background-color: #2ec4b6;"></div>
+                <div class="meter-segment bg-amber-500" style="width: 40%; background-color: #ff9f1c;"></div>
+                <div class="meter-segment bg-rose-500" style="width: 20%; background-color: #f25c54;"></div>
+              </div>
+              <!-- Operating indicator dot marker -->
+              <div class="meter-marker" id="tkph-marker" style="left: 64%;"></div>
+              <p class="text-xs text-earth-rich mt-2" id="res-tkph-explain">
+                Thermal load is moderate. Sourcing standard compounds might lead to heat casing cracks. Heat-resistant compounds required.
+              </p>
+            </div>
+
+            <div class="pt-6">
+              <a href="contact.html?source=TKPH+Calculator" class="btn btn-black btn-full-width py-2 text-xs">Request Heat-Tolerant Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. WCF CALCULATOR PANEL -->
+      <div id="panel-wcf" class="space-y-8 calc-panel-group" style="display: none;">
+        <div class="calc-layout-grid">
+          <!-- Input -->
+          <div class="calc-panel">
+            <h3 class="font-sans font-black text-2xl uppercase mb-1">LOADER WCF FACTOR</h3>
+            <p class="text-xs font-bold text-earth-rich uppercase tracking-wide-heavy mb-6 border-b border-earth-rich pb-2">LOADER/DOZER LOAD-AND-CARRY SPEED LIMITS</p>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="wcf-load">Mean Operational Tyre Load (tonnes) *</label>
+                <input type="number" id="wcf-load" value="18" step="0.5" class="w-full" oninput="runWCF()" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="wcf-speed">Maximum Work Cycle Speed (km/h) *</label>
+                <input type="number" id="wcf-speed" value="8" step="0.5" class="w-full" oninput="runWCF()" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Output -->
+          <div class="calc-results-panel">
+            <span class="text-xs uppercase font-extrabold tracking-wide-heavy text-earth-rich block">CYCLE SCORE</span>
+            <div class="total-saved-container mb-4">
+              <span class="saved-amount" id="res-wcf">144.0</span>
+              <span class="saved-symbol text-xs font-bold ml-1 uppercase">WCF</span>
+            </div>
+
+            <div class="space-y-4 font-sans text-sm border-t border-earth-rich pt-4">
+              <div class="flex justify-between">
+                <span class="text-earth-rich">Safety Guideline:</span>
+                <span class="font-bold text-xs" id="res-wcf-rating">Requires L5 Deep Tread cut compound</span>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="contact.html?source=WCF+Calculator" class="btn btn-black btn-full-width py-2 text-xs">Request Loader casing Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. WIDTH TO RIM SUGGESTER PANEL -->
+      <div id="panel-rim" class="space-y-8 calc-panel-group" style="display: none;">
+        <div class="calc-layout-grid">
+          <!-- Input -->
+          <div class="calc-panel">
+            <h3 class="font-sans font-black text-2xl uppercase mb-1">WIDTH TO RIM MATCHING</h3>
+            <p class="text-xs font-bold text-earth-rich uppercase tracking-wide-heavy mb-6 border-b border-earth-rich pb-2">RECOMMENDED MECHANICAL RIM FITTING</p>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="rim-width">Select Tyre Nominal Section Width</label>
+                <select id="rim-width" class="w-full" onchange="runRim()">
+                  <option value="14.00">14.00" Grader Tyre Width</option>
+                  <option value="23.5">23.5" Medium Loader Width</option>
+                  <option value="26.5">26.5" Standard Loader Width</option>
+                  <option value="29.5">29.5" Heavy Scraper Width</option>
+                  <option value="40.00">40.00" Giant Haulage Width</option>
+                  <option value="45/65">45/65" Giant Loader Width</option>
+                  <option value="59/80">59/80" Ultra-Class 63" Width</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output -->
+          <div class="calc-results-panel">
+            <span class="text-xs uppercase font-extrabold tracking-wide-heavy text-earth-rich block">RECOMMENDED RIM WIDTH</span>
+            <div class="total-saved-container mb-4">
+              <span class="saved-amount" id="res-rim" style="font-size: 3rem;">22.00/3.0</span>
+            </div>
+
+            <div class="space-y-4 font-sans text-sm border-t border-earth-rich pt-4">
+              <div>
+                <span class="text-earth-rich block mb-1">Approved Alternative Rims:</span>
+                <span class="font-bold block" id="res-rim-alternates">22.00/2.5</span>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="contact.html?source=Rim+Suggester" class="btn btn-black btn-full-width py-2 text-xs">Verify Mechanical Fitment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. STAR TO PLY CONVERTER PANEL -->
+      <div id="panel-star" class="space-y-8 calc-panel-group" style="display: none;">
+        <div class="calc-layout-grid">
+          <!-- Input -->
+          <div class="calc-panel">
+            <h3 class="font-sans font-black text-2xl uppercase mb-1">STAR TO PLY INDEX</h3>
+            <p class="text-xs font-bold text-earth-rich uppercase tracking-wide-heavy mb-6 border-b border-earth-rich pb-2">RADIAL CASING TO BIAS PLY CONVERSION</p>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="star-value">Select Casing Star Rating Index</label>
+                <select id="star-value" class="w-full" onchange="runStar()">
+                  <option value="★">1 Star (★) Casing</option>
+                  <option value="★★">2 Star (★★) Casing</option>
+                  <option value="★★★">3 Star (★★★) Casing</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1 text-jewell-black" for="star-type">Operation Cycle Type</label>
+                <select id="star-type" class="w-full" onchange="runStar()">
+                  <option value="Hauler">Hauler / Dump Truck Cycle</option>
+                  <option value="Loader">Loader / Dozer Cycle</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output -->
+          <div class="calc-results-panel">
+            <span class="text-xs uppercase font-extrabold tracking-wide-heavy text-earth-rich block">PLIES EQUIVALENT RATING</span>
+            <div class="total-saved-container mb-4">
+              <span class="saved-amount" id="res-star" style="font-size: 2.25rem; line-height: 1.2;">32 Ply Rating Equiv</span>
+            </div>
+
+            <div class="space-y-4 font-sans text-sm border-t border-earth-rich pt-4">
+              <p class="text-xs text-earth-rich">
+                Radial casings carry structurally dynamic steel plies that dissipate lateral flex heat, performing similarly to higher-ply Bias tyres.
+              </p>
+            </div>
+
+            <div class="pt-6">
+              <a href="contact.html?source=Star+Converter" class="btn btn-black btn-full-width py-2 text-xs">Enquire Sourcing Casings</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-jewell-black text-sand pt-12 pb-6 border-t border-earth-rich font-sans">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-earth-rich pb-10">
+      <div>
+        <h5 class="text-jewell-yellow font-black text-sm uppercase tracking-wide-heavy mb-4">OTR EARTHMOVER</h5>
+        <p class="text-sm text-sand leading-relaxed max-w-sm opacity-80">
+          The most useful B2B independent tyre guide reference in Australia. Sourced from databooks and closed civil knowledge bases.
+        </p>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">DIRECT DESK</h5>
+        <ul class="text-sm space-y-2 opacity-80">
+          <li>✉️ support@otrearthmover.com.au</li>
+          <li>📍 Powered by Jewell Tyres Australia.</li>
+          <li>ABN: 67 007 090 923</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-paper font-black text-sm uppercase tracking-wide-heavy mb-4">NEED A TYRE?</h5>
+        <p class="text-sm text-sand mb-4 opacity-80 leading-relaxed">
+          Sourcing, dispersal, and ultrasonic casing inspections are managed by our commercial partner.
+        </p>
+        <a href="contact.html" class="btn btn-primary py-2 px-5 text-xs">Connect With Jewell</a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-earth-rich">
+      <p>&copy; 2026 OTR Earthmover. All rights reserved. Powered by Jewell Tyres.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-jewell-yellow">Privacy Policy</a>
+        <span>&middot;</span>
+        <a href="#" class="hover:text-jewell-yellow">Trading Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for mathematical calculations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Check query string parameters to select initial calculator tab
+      const params = new URLSearchParams(window.location.search);
+      const activeCalc = params.get("calc");
+      if (activeCalc) {
+        showCalculator(activeCalc);
+      } else {
+        runTKPH();
+      }
+    });
+
+    function showCalculator(calcType) {
+      // Hide all panels
+      document.querySelectorAll(".calc-panel-group").forEach(panel => {
+        panel.style.display = "none";
+      });
+
+      // Show requested panel
+      document.getElementById("panel-" + calcType).style.display = "block";
+
+      // Toggle Active sidebar button classes
+      document.querySelectorAll(".active-tab-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      document.getElementById("btn-" + calcType).classList.add("active");
+
+      // Trigger calculations on active tab to render outputs
+      if (calcType === 'tkph') runTKPH();
+      if (calcType === 'wcf') runWCF();
+      if (calcType === 'rim') runRim();
+      if (calcType === 'star') runStar();
+    }
+
+    // 1. TKPH Calculation
+    function runTKPH() {
+      const empty = parseFloat(document.getElementById("tkph-empty").value) || 0;
+      const loaded = parseFloat(document.getElementById("tkph-loaded").value) || 0;
+      const dist = parseFloat(document.getElementById("tkph-distance").value) || 0;
+      const trips = parseFloat(document.getElementById("tkph-trips").value) || 0;
+      const hours = parseFloat(document.getElementById("tkph-hours").value) || 0;
+
+      const meanLoad = (empty + loaded) / 2;
+      const meanSpeed = hours > 0 ? (dist * trips) / hours : 0;
+      const operatingTKPH = Math.round(meanLoad * meanSpeed * 10) / 10;
+
+      document.getElementById("res-tkph").innerText = operatingTKPH.toFixed(1);
+      document.getElementById("res-tkph-mean-load").innerText = meanLoad.toFixed(1) + " t";
+      document.getElementById("res-tkph-mean-speed").innerText = meanSpeed.toFixed(1) + " km/h";
+
+      let status = "SAFE";
+      let explain = "Thermal load is safe. Sourcing standard radial (E3/E4) or bias plies are suitable.";
+      let color = "#2ec4b6"; // Green
+      let markerPos = 0;
+
+      if (operatingTKPH <= 120) {
+        status = "SAFE";
+        explain = "Thermal load is safe. Sourcing standard radial (E3/E4) or bias plies are suitable.";
+        color = "#2ec4b6";
+        markerPos = (operatingTKPH / 120) * 40;
+      } else if (operatingTKPH > 120 && operatingTKPH <= 240) {
+        status = "WARNING";
+        explain = "Thermal load is moderate. Standard compounds will suffer heat fatigue. Sourcing heat-resistant compounds required.";
+        color = "#ff9f1c"; // Yellow
+        markerPos = 40 + ((operatingTKPH - 120) / 120) * 40;
+      } else {
+        status = "CRITICAL LIMIT";
+        explain = "CRITICAL THERMAL LEVEL. Thermal blowout risks are high. Speeds must be governed. High heat dissipation compound required.";
+        color = "#f25c54"; // Red
+        markerPos = 80 + Math.min(((operatingTKPH - 240) / 120) * 20, 18);
+      }
+
+      const statusBox = document.getElementById("res-tkph-status");
+      statusBox.innerText = status;
+      statusBox.style.color = color;
+      document.getElementById("res-tkph-explain").innerText = explain;
+      document.getElementById("tkph-marker").style.left = markerPos + "%";
+    }
+
+    // 2. WCF Loader Calculation
+    function runWCF() {
+      const load = parseFloat(document.getElementById("wcf-load").value) || 0;
+      const speed = parseFloat(document.getElementById("wcf-speed").value) || 0;
+      const score = Math.round(load * speed);
+
+      document.getElementById("res-wcf").innerText = score.toFixed(1);
+
+      let guide = "Safe for L3/L4 Standard compounds.";
+      if (score > 80 && score <= 150) {
+        guide = "Requires Cut-Resistant L5 Deep Tread compound.";
+      } else if (score > 150) {
+        guide = "CRITICAL LOADER CYCLE. Heat breakdown risks are high. Specialized loader rubber compounds required.";
+      }
+      document.getElementById("res-wcf-rating").innerText = guide;
+    }
+
+    // 3. Rim Width suggestion
+    function runRim() {
+      const width = document.getElementById("rim-width").value;
+      let recom = "22.00/3.0";
+      let alternates = "22.00/2.5";
+
+      if (width === "14.00") {
+        recom = "10.00W"; alternates = "9.00G, 10.00G";
+      } else if (width === "23.5") {
+        recom = "19.50/2.5"; alternates = "19.50/2.0";
+      } else if (width === "26.5") {
+        recom = "22.00/3.0"; alternates = "22.00/2.5";
+      } else if (width === "29.5") {
+        recom = "25.00/3.5"; alternates = "25.00/3.0";
+      } else if (width === "40.00") {
+        recom = "29.00/6.0"; alternates = "29.00/5.5";
+      } else if (width === "45/65") {
+        recom = "36.00/4.5"; alternates = "36.00/4.0";
+      } else if (width === "59/80") {
+        recom = "44.00/5.0"; alternates = "44.00/4.5";
+      }
+
+      document.getElementById("res-rim").innerText = recom;
+      document.getElementById("res-rim-alternates").innerText = alternates;
+    }
+
+    // 4. Star to Ply Conversion
+    function runStar() {
+      const star = document.getElementById("star-value").value;
+      const type = document.getElementById("star-type").value;
+      let plyText = "32 Ply Rating Equiv";
+
+      if (type === "Hauler") {
+        if (star === "★") plyText = "16 Ply / 24 Ply Equivalent";
+        if (star === "★★") plyText = "32 Ply / 42 Ply Equivalent";
+        if (star === "★★★") plyText = "48 Ply / 60 Ply Equivalent";
+      } else {
+        if (star === "★") plyText = "24 Ply / 32 Ply Equivalent";
+        if (star === "★★") plyText = "36 Ply / 48 Ply Equivalent";
+        if (star === "★★★") plyText = "60 Ply / 68 Ply Equivalent";
+      }
+
+      document.getElementById("res-star").innerText = plyText;
+    }
+  </script>
+
+  <script>
+    document.getElementById('mobile-nav').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
