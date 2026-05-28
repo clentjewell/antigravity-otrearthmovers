@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "antigravity-otrearthmovers",
+  "compatibility_date": "2026-05-28",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "clentjewell antigravity-jewelltyres claude-busy-noether-TOBVU otr-standalone-template"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
